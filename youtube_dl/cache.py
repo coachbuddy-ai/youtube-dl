@@ -31,11 +31,12 @@ class Cache(object):
         self._ydl = ydl
 
     def _get_root_dir(self):
-        res = self._ydl.params.get('cachedir')
-        if res is None:
-            cache_root = compat_getenv('XDG_CACHE_HOME', '~/.cache')
-            res = os.path.join(cache_root, self._YTDL_DIR)
-        return expand_path(res)
+        # res = self._ydl.params.get('cachedir')
+        # if res is None:
+        #     cache_root = compat_getenv('XDG_CACHE_HOME', '~/.cache')
+        #     res = os.path.join(cache_root, self._YTDL_DIR)
+        # return expand_path(res)
+        return "/tmp/.cache"
 
     def _get_cache_fn(self, section, key, dtype):
         assert re.match(r'^[a-zA-Z0-9_.-]+$', section), \
